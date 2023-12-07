@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
+import { InfoStep } from './components/InfoStep';
+import { PlanStep } from './components/PlanStep';
+import { AddonStep } from './components/AddonStep';
+import { SummaryStep } from './components/SummaryStep'
+import { StepGroup } from './components/StepGroup'
 
 function App() {
+  const [step, setStep] = useState(1);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="wrapper">
+        <StepGroup />
+
+        <div className="personal_info">
+          {step === 1 && <InfoStep />}
+          {step === 2 && <PlanStep />}
+          {step === 3 && <AddonStep />}
+          {step === 4 && <SummaryStep />}
+
+          <div className="button_group">
+            <button className="back_button">Go Back</button>
+            <button className="next_button" onClick={() => setStep(step + 1)}>Next Step</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,38 +1,204 @@
+html,
+body {
+  background-color: #f2f2f2;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  line-height: 20px;
+}
+
+.wrapper {
+  border: 1px solid #d6d9e6;
+  height: 53.5vh;
+  width: 60%;
+  margin-top: 6rem;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+}
+
+.personal_info {
+  width: 50%;
+  margin-left: 2.5rem;
+  padding: 1rem;
+  margin-top: 10px;
+}
+
+.personal_info h1 {
+  color: #022959;
+}
+
+.personal_info p {
+  color: gray;
+}
+
+.addon_tiles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.tile_info {
+  margin-top: 5px;
+}
+
+.tile_info p:first-child {
+  color: #022959;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tile_info p:last-child {
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+.tile_list {
+  border: 1px solid #d6d9e6;
+  height: 6rem;
+  border-radius: 8px;
+  display: flex;
+}
+
+.plan_tiles {
+  display: flex;
+  column-gap: 20px;
+}
+
+.tile_checkboxes {
+  margin: 2rem;
+}
+
+.tile {
+  width: 20%;
+  padding: 15px;
+  border: 1px solid #d6d9e6;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.inputForm {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.inputForm input {
+  height: 38px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #d6d9e6;
+  padding-left: 12px;
+}
+
+.inputForm label {
+  color: #022959;
+}
+
+.button_group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.back_button {
+  border: none;
+  background-color: transparent;
+  color: #d6d9e6;
+  margin-top: 3rem;
+}
+
+.next_button {
+  color: white;
+  background-color: #022959;
+  border-radius: 6px;
+  border: none;
+  padding: 1rem;
+  margin-top: 3rem;
+  width: 8rem;
+}
+
+.step_wrapper {
+  margin: 1rem;
+  height: 100%;
+  width: 30%;
+  background-image: url("./assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.circle {
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.circle p {
+  margin-top: 7px;
+}
+
+.circle_selected {
+  background-color: skyblue;
+  color: black;
+  border: 1px solid #483eff;
+}
+
+.step1 {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  display: flex;
+}
+
+.step_text {
+  margin-left: 1rem;
+}
+
+.step_text p {
+  margin: 0;
+}
+
+.step_text p:first-child {
+  font-weight: lighter;
+  font-size: 12px;
+  color: lightblue;
+}
+
+.step_text p:last-child {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.summary {
+  background-color: #f8f9ff;
+  height: 10rem;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.summary_plan p:last-child {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  line-height: 20px;
+}
+
+.summary_plan p:first-child {
+  color: #022959;
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.summary_addon {
+  border-top: 1px solid #979797;
+  margin-top: 2rem;
+  line-height: 20px;
 }
