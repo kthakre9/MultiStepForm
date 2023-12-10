@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export function StepGroup() {
+interface StepProps {
+    step: number
+}
 
+export const StepGroup: React.FC<StepProps> = ({ step }) => {
     return (
         <div className="step_wrapper">
             <div className="step1">
-                <div className="circle circle_selected"><p>1</p></div>
+                <div className={`circle ${step === 1 ? "circle_selected" : ''}`}><p>1</p></div>
                 <div className="step_text">
                     <p>STEP 1</p>
                     <p>YOUR INFO</p>
@@ -13,7 +16,7 @@ export function StepGroup() {
             </div>
 
             <div className="step1">
-                <div className="circle"><p>2</p></div>
+                <div className={`circle ${step === 2 ? "circle_selected" : ''}`}><p>2</p></div>
                 <div className="step_text">
                     <p>STEP 2</p>
                     <p>SELECT PLAN</p>
@@ -21,7 +24,7 @@ export function StepGroup() {
             </div>
 
             <div className="step1">
-                <div className="circle"><p>3</p></div>
+                <div className={`circle ${step === 3 ? "circle_selected" : ''}`}><p>3</p></div>
                 <div className="step_text">
                     <p>STEP 3</p>
                     <p>ADD-ONS</p>
@@ -29,7 +32,7 @@ export function StepGroup() {
             </div>
 
             <div className="step1">
-                <div className="circle"><p>4</p></div>
+                <div className={`circle ${step === 4 ? "circle_selected" : ''}`}><p>4</p></div>
                 <div className="step_text">
                     <p>STEP 4</p>
                     <p>SUMMARY</p>

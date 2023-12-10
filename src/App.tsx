@@ -9,21 +9,28 @@ import { StepGroup } from './components/StepGroup'
 
 function App() {
   const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: 0,
+    plans: [],
+    addOns: []
+  });
 
   return (
     <div className="App">
       <div className="wrapper">
-        <StepGroup />
+        <StepGroup step={step} />
 
         <div className="personal_info">
-          {step === 1 && <InfoStep />}
-          {step === 2 && <PlanStep />}
-          {step === 3 && <AddonStep />}
-          {step === 4 && <SummaryStep />}
+          {step === 1 && <InfoStep formData={formData} setFormData={setFormData} />}
+          {step === 2 && <PlanStep formData={formData} setFormData={setFormData} />}
+          {step === 3 && <AddonStep formData={formData} setFormData={setFormData}  />}
+          {step === 4 && <SummaryStep formData={formData} />}
 
           <div className="button_group">
-            <button className="back_button">Go Back</button>
-            <button className="next_button" onClick={() => setStep(step + 1)}>Next Step</button>
+            {(step === 2 || step === 3) && <button className="back_button" onClick={() => setStep(step - 1)}>Go Back</button>}
+            <button className="next_button" onClick={() => setStep(step + 1)}> {step === 4 ? 'Submit' : 'Next Step'}</button>
           </div>
         </div>
       </div>

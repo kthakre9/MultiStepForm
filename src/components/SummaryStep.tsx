@@ -1,19 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export function SummaryStep() {
+interface formDataProps {
+    name: string,
+    email: string,
+    number: number,
+    plans: string[],
+    addOns: any[]
+}
+
+interface SummaryProps {
+    formData: formDataProps,
+}
+
+export const SummaryStep: React.FC<SummaryProps> = ({ formData }) => {
+
     return (
         <>
             <h1>Finishing up</h1>
             <p>Double check everything look OK before confirming</p>
             <div className="summary">
                 <div className="summary_plan">
-                    <p>Arcade (Monthly)</p>
-                    <p>Change</p>
+                    {formData.plans.map((item) => {
+                        return (
+                            <>
+                                <p>{item}</p>
+                                <p>Change</p>
+                            </>
+                        )
+                    })}
                 </div>
 
                 <div className="summary_addon">
-                    <p>Online Service</p>
-                    <p>Larger Storage</p>
+
+                    {formData.addOns.map((item) => {
+                        return (
+                            <>
+                                <p>{item}</p>
+                            </>
+                        )
+                    })}
                 </div>
             </div>
         </>
